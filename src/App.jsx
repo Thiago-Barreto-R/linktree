@@ -31,7 +31,7 @@ export function App() {
           <a
             href={links.url}
             target="_blank"
-            className="w-96 border-2 duration-300 mb-3 p-2 hover:bg-zinc-800 hover:scale-105 rounded-md text-center"
+            className="w-56 border-2 duration-300 mb-3 p-2 hover:bg-zinc-800 hover:scale-105 rounded-md text-center"
           >
             <div className="w-full flex justify-between items-center">
               <img
