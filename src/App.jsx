@@ -4,7 +4,7 @@ import Logo from "./assets/logo.png";
 
 export function App() {
   return (
-    <div className="w-full min-h-screen bg-zinc-900 text-zinc-100">
+    <div className="w-full min-h-screen bg-zinc-900 px-10 text-zinc-100">
       <header className="w-full">
         <img src={Logo} alt="Logo" className="h-40" />
       </header>
@@ -31,7 +31,7 @@ export function App() {
           <a
             href={links.url}
             target="_blank"
-            className="w-full border-2 duration-300 mb-3 p-2 hover:bg-zinc-800 hover:scale-105 rounded-md text-center xl:max-w-96"
+            className="w-96 border-2 duration-300 mb-3 p-2 hover:bg-zinc-800 hover:scale-105 rounded-md text-center"
           >
             <div className="w-full flex justify-between items-center">
               <img
