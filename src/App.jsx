@@ -1,48 +1,42 @@
 import React from "react";
-import data from "../data.js";
+import { data } from "../data.js";
 import Logo from "./assets/logo.png";
+import { HeroPattern } from "./components/HeroPatterns.jsx";
 
 export function App() {
   return (
-    <div className="w-full min-h-screen bg-zinc-900 px-10 text-zinc-100">
-      <header className="w-full">
-        <img src={Logo} alt="Logo" className="h-40" />
-      </header>
-      <div className="flex flex-col items-center justify-center">
-        <img
-          src={data.avatar}
-          alt="imagem da perfil"
-          className="rounded-full w-28 h-28 border-2 p-0.5 border-blue-800"
-        />
-        <h1 className="mt-6 text-xl">{data.name}</h1>
-        <p className="text-zinc-500 mb-4">{data.formed}</p>
-        <div>
-          {data.icons.map((icon) => (
+    <div className="w-full min-h-screen bg-zinc-900 text-zinc-100">
+      <HeroPattern />
+      <div className="w-full z-50 relative">
+        <header className="">
+          <img src={Logo} alt="Logo" className="h-32" />
+        </header>
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={data.avatar}
+            alt="imagem da perfil"
+            className="rounded-full w-28 h-28 border-2 p-0.5 border-violet-600"
+          />
+          <h1 className="mt-6 text-xl">{data.name}</h1>
+          <p className="text-zinc-500 mb-4">{data.formed}</p>
+          <div className="w-full flex items-center justify-center gap-5 mb-5">
+            {data.links.map((link) => (
+              <a key={link.id} href={link.url} target={link.target}>
+                <link.icon />
+              </a>
+            ))}
+          </div>
+          {data.cards.map((card) => (
             <a
-              href={icon.href_link}
-              className="text-zinc-100"
-              target={icon.target_link}
+              key={card.id}
+              href={card.url}
+              download={card.cv_download}
+              className="border-2 border-violet-900 bg-zinc-900 rounded-md shadow-md shadow-zinc-950 flex items-center justify-center py-3 w-60 mb-4 duration-300 hover:scale-105 xl:w-96"
             >
-              <img src={icon.icon} alt="" />
+              {card.title}
             </a>
           ))}
         </div>
-        {data.links.map((links) => (
-          <a
-            href={links.url}
-            target="_blank"
-            className="w-56 border-2 duration-300 mb-3 p-2 hover:bg-zinc-800 hover:scale-105 rounded-md text-center"
-          >
-            <div className="w-full flex justify-between items-center">
-              <img
-                src={links.image}
-                alt="imagem do ...."
-                className="w-8 h-8 rounded-sm"
-              />
-              <p className="w-full">{links.title}</p>
-            </div>
-          </a>
-        ))}
       </div>
     </div>
   );
