@@ -51,7 +51,7 @@ export const data = {
         {
             id: 4,
             icon: Phone,
-            url: `https://wa.me/${import.meta.env.VITE_PHONE}?text=Olá,%20gostaria%20de%20mais%20informações.`,
+            url: `https://wa.me/${import.meta.env.VITE_PHONE}?text=${import.meta.env.VITE_TEXT_TO_PHONE}.`,
             target: "_blank"
         },
     ]
